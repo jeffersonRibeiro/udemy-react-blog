@@ -19,15 +19,8 @@ class Blog extends Component {
             </ul>
           </nav>
         </header>
-        <Route exact path="/" render={() => <h1>Home</h1>}  />
-        <Posts />
-        
-        {/* <section>
-          <FullPost id={this.state.selectedPostId} />
-        </section>
-        <section>
-          <NewPost />
-        </section> */}
+        {/* <Route exact path="/" render={() => <h1>Home</h1>}  /> */}
+        <Route exact path="/" component={Posts} />
       </div>
     );
   }
