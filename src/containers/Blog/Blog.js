@@ -44,7 +44,15 @@ class Blog extends Component {
       );
     });
     return (
-      <div>
+      <div className="Blog">
+        <header>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/new-posts">New Posts</a></li>
+            </ul>
+          </nav>
+        </header>
         <section className="Posts">
           {posts}
         </section>
