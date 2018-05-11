@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import Post from '../../../components/Post/Post';
 
@@ -29,19 +29,19 @@ class Posts extends Component {
   }
 
   postSelectedHandler = (id) => {
-    this.setState({selectedPostId: id});
+    this.props.history.push(`/${id}`);
   }
 
   render() {
     const posts = this.state.posts.map(p => {
       return(
-        <Link to={'/' + p.id} key={p.id}>
+        // <Link to={'/' + p.id} key={p.id}>
           <Post 
             title={p.title}
             author={p.author}
             clicked={() => this.postSelectedHandler(p.id)}
           />
-        </Link>
+        // </Link>
       );
     });
 
