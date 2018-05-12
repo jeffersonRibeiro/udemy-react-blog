@@ -5,8 +5,12 @@ import { Route, NavLink, Switch, Redirect }from 'react-router-dom';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
+import Page404 from '../../components/Page404';
 
 class Blog extends Component {
+  state = {
+    auth: false,
+  }
   
   render () {
     
@@ -28,7 +32,7 @@ class Blog extends Component {
       <Switch>
         <Route path="/new-post" component={NewPost} />
         <Route path="/posts/" component={Posts} />
-        <Redirect from="/" to="/posts" />
+        <Route component={Page404} />
       </Switch>
       
       </div>
