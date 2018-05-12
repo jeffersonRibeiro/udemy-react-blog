@@ -7,29 +7,29 @@ import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
 
 class Blog extends Component {
-
+  
   render () {
     
     return (
       <div className="Blog">
-        <header>
-          <nav>
-            <ul>
-              <li><NavLink exact to="/posts">Posts</NavLink></li>
-              <li><NavLink to={{
-                pathname: '/new-post',
-                hash: '#submit',
-                search: '?quick=true',
-              }}>New Posts</NavLink></li>
-            </ul>
-          </nav>
-        </header>
-        
-        <Switch>
-          <Route path="/new-post" component={NewPost} />
-          <Route path="/posts/" component={Posts} />
-          <Redirect from="/" to="/posts" />
-        </Switch>
+      <header>
+        <nav>
+        <ul>
+          <li><NavLink exact to="/posts">Posts</NavLink></li>
+          <li><NavLink to={{
+            pathname: '/new-post',
+            hash: '#submit',
+            search: '?quick=true',
+          }}>New Posts</NavLink></li>
+        </ul>
+        </nav>
+      </header>
+      
+      <Switch>
+        <Route path="/new-post" component={NewPost} />
+        <Route path="/posts/" component={Posts} />
+        <Redirect from="/" to="/posts" />
+      </Switch>
       
       </div>
     );
